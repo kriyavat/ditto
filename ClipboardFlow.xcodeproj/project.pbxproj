@@ -6,13 +6,30 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		D2DF6BBD2D9952BB00EBCE08 /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = D2DF6BBC2D9952BB00EBCE08 /* HotKey */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		D27876D82D994F5300CF5273 /* ClipboardFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClipboardFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		D2DF6BBA2D99502C00EBCE08 /* Exceptions for "ClipboardFlow" folder in "ClipboardFlow" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Untitled.swift,
+			);
+			target = D27876D72D994F5300CF5273 /* ClipboardFlow */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		D27876DA2D994F5300CF5273 /* ClipboardFlow */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				D2DF6BBA2D99502C00EBCE08 /* Exceptions for "ClipboardFlow" folder in "ClipboardFlow" target */,
+			);
 			path = ClipboardFlow;
 			sourceTree = "<group>";
 		};
@@ -23,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2DF6BBD2D9952BB00EBCE08 /* HotKey in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +83,7 @@
 			);
 			name = ClipboardFlow;
 			packageProductDependencies = (
+				D2DF6BBC2D9952BB00EBCE08 /* HotKey */,
 			);
 			productName = ClipboardFlow;
 			productReference = D27876D82D994F5300CF5273 /* ClipboardFlow.app */;
@@ -94,6 +113,9 @@
 			);
 			mainGroup = D27876CF2D994F5300CF5273;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				D2DF6BBB2D9952BB00EBCE08 /* XCRemoteSwiftPackageReference "HotKey" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = D27876D92D994F5300CF5273 /* Products */;
 			projectDirPath = "";
@@ -319,6 +341,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D2DF6BBB2D9952BB00EBCE08 /* XCRemoteSwiftPackageReference "HotKey" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/soffes/HotKey";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D2DF6BBC2D9952BB00EBCE08 /* HotKey */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D2DF6BBB2D9952BB00EBCE08 /* XCRemoteSwiftPackageReference "HotKey" */;
+			productName = HotKey;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D27876D02D994F5300CF5273 /* Project object */;
 }

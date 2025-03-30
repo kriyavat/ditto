@@ -9,9 +9,17 @@ import SwiftUI
 
 @main
 struct ClipboardFlowApp: App {
+    init() {
+        // Register hotkeys immediately
+        _ = HotkeyManager.shared
+    }
+
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+        MenuBarExtra {
+            ClipboardMenuView()
+        } label: {
+            Label("ClipboardFlow", systemImage: "doc.on.clipboard")
         }
+        .menuBarExtraStyle(.window)
     }
 }
