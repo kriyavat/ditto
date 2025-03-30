@@ -8,28 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		D2DF6BBD2D9952BB00EBCE08 /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = D2DF6BBC2D9952BB00EBCE08 /* HotKey */; };
+		D2DF6BC92D99C87100EBCE08 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D2DF6BC72D99C86B00EBCE08 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D27876D82D994F5300CF5273 /* ClipboardFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClipboardFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2DF6BC72D99C86B00EBCE08 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		D2DF6BBA2D99502C00EBCE08 /* Exceptions for "ClipboardFlow" folder in "ClipboardFlow" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Untitled.swift,
-			);
-			target = D27876D72D994F5300CF5273 /* ClipboardFlow */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		D27876DA2D994F5300CF5273 /* ClipboardFlow */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				D2DF6BBA2D99502C00EBCE08 /* Exceptions for "ClipboardFlow" folder in "ClipboardFlow" target */,
-			);
 			path = ClipboardFlow;
 			sourceTree = "<group>";
 		};
@@ -50,6 +39,7 @@
 		D27876CF2D994F5300CF5273 = {
 			isa = PBXGroup;
 			children = (
+				D2DF6BC72D99C86B00EBCE08 /* README.md */,
 				D27876DA2D994F5300CF5273 /* ClipboardFlow */,
 				D27876D92D994F5300CF5273 /* Products */,
 			);
@@ -131,6 +121,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2DF6BC92D99C87100EBCE08 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
