@@ -72,7 +72,7 @@ ClipboardFlow solves this by giving you:
 ### ⚙️ Getting Started
 
 ```bash
-git clone https://github.com/yourusername/ClipboardFlow.git
+git clone https://github.com/kriyavat/ClipboardFlow
 ```
 
 1. Open `ClipboardFlow.xcodeproj` in Xcode
