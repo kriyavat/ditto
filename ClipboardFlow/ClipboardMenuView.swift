@@ -1,10 +1,3 @@
-//
-//  ClipboardMenuView.swift
-//  ClipboardFlow
-//
-//  Created by Rahul on 30/03/25.
-//
-
 import SwiftUI
 import AppKit
 import Foundation
@@ -32,23 +25,13 @@ struct ClipboardMenuView: View {
                 manager.hudMessage = nil
             }
         }
-        .overlay(
-            PasteHUD(message: manager.hudMessage ?? "")
-                .opacity(manager.hudMessage == nil ? 0 : 1)
-        )
-        .onChange(of: manager.hudMessage) {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                manager.hudMessage = nil
-            }
-        }
-
     }
 
     // MARK: - Header
 
     var header: some View {
         HStack {
-            Text("📋 ClipboardFlow")
+            Text("\u{1F4CB} ClipboardFlow")
                 .font(.headline)
             Spacer()
             Text(manager.pasteMode.rawValue)
@@ -89,11 +72,21 @@ struct ClipboardMenuView: View {
         if manager.buffer.isEmpty {
             return AnyView(emptyBufferView)
         } else {
+            let reversedBuffer = Array(manager.buffer.reversed())
+            let displayBuffer: [ClipboardItem] = manager.pasteMode == .fifo ? reversedBuffer : manager.buffer
+            let count = manager.buffer.count
+            let current = manager.currentIndex % count
+
             return AnyView(
                 ScrollView {
                     VStack(spacing: 10) {
-                        ForEach(Array(manager.buffer.prefix(8).enumerated()), id: \.element.id) { (index, item) in
-                            ClipboardItemView(index: index + 1, item: item)
+                        ForEach(Array(displayBuffer.prefix(8).enumerated()), id: \ .element.id) { pair in
+                            let index = pair.offset
+                            let item = pair.element
+                            let actualIndex = manager.pasteMode == .fifo ? count - 1 - index : index
+                            let isNext = actualIndex == current
+
+                            ClipboardItemView(index: index + 1, item: item, isNext: isNext)
                         }
                     }
                 }
@@ -135,18 +128,24 @@ struct ClipboardMenuView: View {
 struct ClipboardItemView: View {
     let index: Int
     let item: ClipboardItem
+    let isNext: Bool
 
     var body: some View {
-        HStack {
+        HStack(spacing: 6) {
             Text("\(index).")
                 .foregroundColor(.gray)
+
+            if isNext {
+                Image(systemName: "arrow.right.circle.fill")
+                    .foregroundColor(.green)
+            }
 
             switch item {
             case .text(let string, _):
                 Text(String(string.prefix(40)))
                     .lineLimit(1)
                     .font(.callout)
-
+                    .fontWeight(isNext ? .bold : .regular)
             case .image(let data, _):
                 if let nsImage = NSImage(data: data) {
                     Image(nsImage: nsImage)

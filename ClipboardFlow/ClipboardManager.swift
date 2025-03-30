@@ -13,7 +13,7 @@ class ClipboardManager: ObservableObject {
     @Published var pasteMode: PasteMode = .fifo
     @Published var hudMessage: String?
     
-    private var currentIndex = 0
+    @Published var currentIndex = 0
     let maxBufferSize = 8
     
     private init() {
@@ -77,36 +77,49 @@ class ClipboardManager: ObservableObject {
             hudMessage = "📋 Buffer is empty"
             return
         }
-        
+
         let item: ClipboardItem
         let indexToPaste: Int
-        
+
         switch pasteMode {
         case .fifo:
-            indexToPaste = currentIndex % buffer.count
-            item = buffer[indexToPaste]
+            // Reverse the buffer to paste oldest first
+            let reversed = Array(buffer.reversed())
+            indexToPaste = currentIndex % reversed.count
+            item = reversed[indexToPaste]
         case .lifo:
             indexToPaste = currentIndex % buffer.count
-            item = buffer.reversed()[indexToPaste]
+            item = buffer[indexToPaste]
         }
-        
+
         currentIndex += 1
         setPasteboardToItem(item)
         simulatePaste()
         hudMessage = "📋 Pasted item \(indexToPaste + 1) of \(buffer.count)"
     }
+
     
     func pasteSlot(_ index: Int) {
         guard buffer.indices.contains(index) else {
             hudMessage = "❌ Slot \(index + 1) is empty"
             return
         }
-        
-        let item = buffer[index]
+
+        let item: ClipboardItem
+
+        switch pasteMode {
+        case .fifo:
+            let reversed = Array(buffer.reversed())
+            item = reversed[index]
+        case .lifo:
+            item = buffer[index]
+        }
+
         setPasteboardToItem(item)
         simulatePaste()
         hudMessage = "📋 Pasted slot \(index + 1)"
     }
+
     
     // MARK: - Clipboard Setter
     
