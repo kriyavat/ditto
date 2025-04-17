@@ -1,154 +1,148 @@
-# 📋 ClipboardFlow
+# 📋 Ditto — Smarter Clipboard, Seamless Flow
 
-ClipboardFlow is a **super lightweight**, **blazing-fast** macOS menu bar utility that brings **structure, speed, and sanity** to your clipboard.
+**Ditto** is a lightning-fast, ultra-lightweight macOS menu bar utility that gives your clipboard superpowers.  
+Effortlessly copy, manage, and paste multiple items — all from your keyboard.
 
-Designed for developers, designers, writers, and even your grandma, ClipboardFlow captures your copied items and lets you paste them **in perfect order** using **smart keyboard shortcuts**. It’s like command+V — but intelligent.
-
----
-
-## ✨ Why ClipboardFlow?
-
-Copying one thing at a time is painful. Copying multiple things and remembering what comes next? Even worse.
-
-ClipboardFlow solves this by giving you:
-- A visual buffer of your last 8 copied items
-- Full keyboard control over how and when you paste them
-- A HUD that keeps you informed (without being annoying)
-- All wrapped in a minimal menu bar utility that just works
+> Like ⌘+V, but actually useful.
 
 ---
 
-## 🚀 Features Overview
+## ✨ Why Ditto?
 
-### 🔹 Smart Clipboard Buffer
-- Stores up to 8 clipboard items in memory
-- Supports: `Plain Text`, `Rich Text`, `Images`, `File URLs`
-- Automatically adds new items on ⌘C (copy)
-- Drops oldest items when full
-- Nothing saved to disk (RAM-only)
+Copying one item at a time is frustrating.  
+Juggling multiple snippets, tokens, or notes? Even worse.
+
+**Ditto** makes it effortless with:
+
+- A live buffer of your last 8 clipboard items
+- Full keyboard control over what and when you paste
+- A heads-up display (HUD) for instant visual feedback
+- A minimalist menu bar UI that stays out of your way
+
+---
+
+## 🚀 Features
+
+### 🧠 Intelligent Clipboard Buffer
+- Stores your **last 8** copied items (RAM-only, not saved to disk)
+- Supports: Plain text, rich text, file URLs, images
+- Automatically updates on ⌘C
+- Oldest item drops off when full
 
 ### 🔄 Paste Modes
-- **FIFO (First In, First Out):** Paste in the order you copied
-- **LIFO (Last In, First Out):** Paste the newest copied item first
-- Toggle instantly from the menu bar
+- **FIFO**: First In, First Out — paste in the order you copied
+- **LIFO**: Last In, First Out — paste the most recent first
+- Toggle instantly via the menu bar
 
-### ⚡ Paste Interactions
-
-#### 🔁 Cycle Paste
-- Press `⌘⌥V` to paste the **next item** from your buffer
-- Automatically cycles (wraps around)
-- No more re-copying or context loss
-
-#### 🎯 Slot Paste
-- Use `⌘⌥1` through `⌘⌥8` to paste a **specific buffer slot**
-- Slot 1 is always the top-most visible item in the dropdown
-- Perfect for pasting API keys, emoji combos, filenames, etc.
+### ⚡ Fast Keyboard Interactions
+- **Cycle Paste**:  
+  ⌘⌥V pastes the next item and wraps around seamlessly
+- **Slot Paste**:  
+  ⌘⌥1 through ⌘⌥8 pastes a specific item  
+  Perfect for pasting API keys, email templates, emojis, or filenames
 
 ### 🖥️ Minimal Menu Bar UI
-- 📋 Menu bar icon with subtle active indicator
-- Dropdown includes:
-  - Visual buffer (1–8 items)
-  - Paste mode toggle (FIFO / LIFO)
-  - Highlight for next-to-paste item
-  - Paste Next button
-  - Clear button
-  - Quit button
+- Subtle 📋 icon with active state indicator
+- Dropdown shows:
+  - Visual buffer (slots 1–8)
+  - Active paste mode (FIFO / LIFO)
+  - Next item to be pasted
+  - "Paste Next", "Clear", and "Quit" buttons
 
 ### 🧩 HUD Overlay
-- Displays confirmation when pasting an item
-- Shows buffer index and quick feedback
-- Auto-dismisses in 2 seconds
+- Visual feedback on paste with slot index
+- Auto-dismisses after 2 seconds
+- Helps you stay focused without switching context
 
-### 🔐 Secure by Design
-- All data is stored **in memory only**
-- Nothing touches your disk
+### 🔐 Privacy-First
+- No files written to disk
 - 100% local processing
-- Near-zero CPU use when idle
+- Near-zero CPU when idle
 
 ---
 
-## 💻 For Developers
+## 🧑‍💻 For Developers & Power Users
 
-### ⚙️ Getting Started
+### Common Use Cases
+- 💻 Copy/paste tokens, configs, snippets
+- 🎨 Grab color values, design assets, and export paths
+- ✍️ Manage quotes, headings, and content blocks
+- 🧪 Paste test data into forms like a champ
+
+### Keyboard Shortcuts
+
+| Shortcut         | Action                      |
+|------------------|-----------------------------|
+| ⌘C               | Copy (auto-add to buffer)   |
+| ⌘⌥V              | Paste next item             |
+| ⌘⌥1 through ⌘⌥8  | Paste specific slot         |
+| ⌘⌫ (Delete)      | Clear buffer                |
+| ⌘Q               | Quit Ditto                  |
+
+---
+
+## 🛠️ Getting Started
 
 ```bash
-git clone https://github.com/kriyavat/ClipboardFlow
+git clone https://github.com/kriyavat/Ditto.git
+cd Ditto
+open Ditto.xcodeproj
 ```
 
-1. Open `ClipboardFlow.xcodeproj` in Xcode
-2. Build & Run (⌘R)
-3. Grant Accessibility permissions when prompted:
-   > System Settings → Privacy & Security → Accessibility → Enable ClipboardFlow
-4. Done! You’ll see 📋 in the menu bar
+1.  Build & Run using Xcode (⌘R)
+    
+2.  When prompted, grant Accessibility permissions:  
+    `System Settings → Privacy & Security → Accessibility → Enable Ditto`
 
-### 🧪 Testing
-- Open TextEdit or Notes
-- Copy multiple items (⌘C)
-- Try `⌘⌥V` to cycle-paste
-- Try `⌘⌥1` through `⌘⌥8` to slot-paste
+3.  Look for 📋 in the menu bar. You're good to go!
 
-✅ Paste order reflects FIFO/LIFO mode
-✅ Slot paste matches visible list
+## 🧪 Testing It Out
 
----
+1.  Open **Notes** or **TextEdit**
+    
+2.  Copy multiple items using ⌘C
+    
+3.  Press ⌘⌥V repeatedly to cycle through them
+    
+4.  Use ⌘⌥1–8 to paste a specific item from the buffer
+    
 
-## ⌨️ Keyboard Shortcuts
+✔️ Paste order updates in real-time  
+✔️ Buffer updates automatically  
+✔️ Visual and HUD feedback on every action
 
-| Shortcut         | Action                                |
-|------------------|-----------------------------------------|
-| ⌘C               | Copy (auto-added to buffer)             |
-| ⌘⌥V              | Paste next buffer item                  |
-| ⌘⌥1–8            | Paste exact slot                        |
-| ⌘Q               | Quit ClipboardFlow                      |
-| ⌘⌫ (Delete)      | Clear buffer (from dropdown)           |
-
----
-
-## 👥 Who It's For
-
-- 💻 **Developers** copying tokens, configs, snippets
-- 🎨 **Designers** copying values, color codes, assets
-- 🧠 **Writers** managing quotes, headings, content blocks
-- 🧪 **Testers** pasting test data into web forms
-- 🙋‍♂️ **Anyone** who wants more control over copy/paste
-
----
+----------
 
 ## 🔜 Coming Soon
 
-- Preferences Window
-  - Launch at login
-  - Custom max buffer size (3–8)
-  - Toggle paste simulation
-- Better image support (thumbnails + previews)
-- Notifications: pasted to unsupported apps
-- Customizable shortcuts
+-   Preferences window
+    
+-   Launch at login
+    
+-   Adjustable buffer size (3–8 items)
+    
+-   Toggle paste simulation (for edge cases)
+    
+-   Rich image previews in dropdown
+    
+-   App-specific paste notifications
+    
+-   Fully customizable shortcuts
+    
 
----
 
-## 📷 Screenshots (Coming Soon)
-- [x] Menu bar UI
-- [x] Buffer preview
-- [x] Paste mode toggle
-- [x] HUD overlay in action
-
----
+----------
 
 ## 🙌 Credits
 
-Created with 💛 by [@rohan-kiratsata](https://github.com/rohan-kiratsata) [@rahuldotbiz](https://github.com/rahuldotbiz)
+Made with 💛 by  
+[@rohan-kiratsata](https://github.com/rohan-kiratsata) & [@rahuldotbiz](https://github.com/rahuldotbiz)
 
-Special thanks to the macOS community and everyone tired of copying the same thing twice.
+Thanks to the macOS developer community and everyone tired of re-copying the same thing twice.
 
-Pull requests welcome!
-
----
+----------
 
 ## 📄 License
 
-ClipboardFlow is licensed under the MIT License.
-Use it. Fork it. Improve it. Just don’t be evil.
-
----
-
-Clipboard
+Ditto is released under the MIT License  
+Feel free to use it, fork it, or improve it — just don’t be evil.
