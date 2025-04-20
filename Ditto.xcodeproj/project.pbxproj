@@ -12,14 +12,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D27876D82D994F5300CF5273 /* ClipboardFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClipboardFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D27876D82D994F5300CF5273 /* Ditto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ditto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2DF6BC72D99C86B00EBCE08 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		D27876DA2D994F5300CF5273 /* ClipboardFlow */ = {
+		D27876DA2D994F5300CF5273 /* Ditto */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ClipboardFlow;
+			path = Ditto;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -40,7 +40,7 @@
 			isa = PBXGroup;
 			children = (
 				D2DF6BC72D99C86B00EBCE08 /* README.md */,
-				D27876DA2D994F5300CF5273 /* ClipboardFlow */,
+				D27876DA2D994F5300CF5273 /* Ditto */,
 				D27876D92D994F5300CF5273 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,7 +48,7 @@
 		D27876D92D994F5300CF5273 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D27876D82D994F5300CF5273 /* ClipboardFlow.app */,
+				D27876D82D994F5300CF5273 /* Ditto.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,9 +56,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D27876D72D994F5300CF5273 /* ClipboardFlow */ = {
+		D27876D72D994F5300CF5273 /* Ditto */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D27876E72D994F5400CF5273 /* Build configuration list for PBXNativeTarget "ClipboardFlow" */;
+			buildConfigurationList = D27876E72D994F5400CF5273 /* Build configuration list for PBXNativeTarget "Ditto" */;
 			buildPhases = (
 				D27876D42D994F5300CF5273 /* Sources */,
 				D27876D52D994F5300CF5273 /* Frameworks */,
@@ -69,14 +69,14 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				D27876DA2D994F5300CF5273 /* ClipboardFlow */,
+				D27876DA2D994F5300CF5273 /* Ditto */,
 			);
-			name = ClipboardFlow;
+			name = Ditto;
 			packageProductDependencies = (
 				D2DF6BBC2D9952BB00EBCE08 /* HotKey */,
 			);
 			productName = ClipboardFlow;
-			productReference = D27876D82D994F5300CF5273 /* ClipboardFlow.app */;
+			productReference = D27876D82D994F5300CF5273 /* Ditto.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -94,7 +94,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D27876D32D994F5300CF5273 /* Build configuration list for PBXProject "ClipboardFlow" */;
+			buildConfigurationList = D27876D32D994F5300CF5273 /* Build configuration list for PBXProject "Ditto" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -111,7 +111,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D27876D72D994F5300CF5273 /* ClipboardFlow */,
+				D27876D72D994F5300CF5273 /* Ditto */,
 			);
 		};
 /* End PBXProject section */
@@ -261,22 +261,26 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = ClipboardFlow/ClipboardFlow.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ClipboardFlow/Preview Content\"";
-				DEVELOPMENT_TEAM = NHX2M3AQ5B;
+				DEVELOPMENT_TEAM = Y8CH2NAYZ3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Ditto;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = biz.rahul.ClipboardFlow;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.kriyavatlabs.ditto;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -288,22 +292,26 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = ClipboardFlow/ClipboardFlow.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ClipboardFlow/Preview Content\"";
-				DEVELOPMENT_TEAM = NHX2M3AQ5B;
+				DEVELOPMENT_TEAM = Y8CH2NAYZ3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Ditto;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = biz.rahul.ClipboardFlow;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.kriyavatlabs.ditto;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -313,7 +321,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D27876D32D994F5300CF5273 /* Build configuration list for PBXProject "ClipboardFlow" */ = {
+		D27876D32D994F5300CF5273 /* Build configuration list for PBXProject "Ditto" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D27876E52D994F5400CF5273 /* Debug */,
@@ -322,7 +330,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D27876E72D994F5400CF5273 /* Build configuration list for PBXNativeTarget "ClipboardFlow" */ = {
+		D27876E72D994F5400CF5273 /* Build configuration list for PBXNativeTarget "Ditto" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D27876E82D994F5400CF5273 /* Debug */,
