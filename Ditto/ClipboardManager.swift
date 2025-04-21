@@ -71,7 +71,7 @@ class ClipboardManager: ObservableObject {
     }
     
     // MARK: - Paste Logic
-    
+
     func pasteNext() {
         guard !buffer.isEmpty else {
             hudMessage = "📋 Buffer is empty"
@@ -83,7 +83,6 @@ class ClipboardManager: ObservableObject {
 
         switch pasteMode {
         case .fifo:
-            // Reverse the buffer to paste oldest first
             let reversed = Array(buffer.reversed())
             indexToPaste = currentIndex % reversed.count
             item = reversed[indexToPaste]
@@ -94,11 +93,14 @@ class ClipboardManager: ObservableObject {
 
         currentIndex += 1
         setPasteboardToItem(item)
-        simulatePaste()
-        hudMessage = "📋 Pasted item \(indexToPaste + 1) of \(buffer.count)"
+
+        // ✅ NEW: Add delay to ensure pasteboard updates before simulating ⌘V
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
+            self.simulatePaste()
+            self.hudMessage = "📋 Pasted item \(indexToPaste + 1) of \(self.buffer.count)"
+        }
     }
 
-    
     func pasteSlot(_ index: Int) {
         guard buffer.indices.contains(index) else {
             hudMessage = "❌ Slot \(index + 1) is empty"
@@ -116,11 +118,14 @@ class ClipboardManager: ObservableObject {
         }
 
         setPasteboardToItem(item)
-        simulatePaste()
-        hudMessage = "📋 Pasted slot \(index + 1)"
+
+        // ✅ NEW: Add delay here as well
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
+            self.simulatePaste()
+            self.hudMessage = "📋 Pasted slot \(index + 1)"
+        }
     }
 
-    
     // MARK: - Clipboard Setter
     
     private func setPasteboardToItem(_ item: ClipboardItem) {
@@ -131,15 +136,16 @@ class ClipboardManager: ObservableObject {
         switch item {
         case .text(let string, _):
             pb.setString(string, forType: .string)
+            print("📋 Set pasteboard to TEXT: \(string.prefix(30))...")
         case .image(let data, _):
             pb.setData(data, forType: .png)
+            print("📋 Set pasteboard to IMAGE")
         }
     }
     
     // MARK: - Simulated Paste
     
     private func simulatePaste() {
-        // Hide our own app to give focus back to previous window
         NSApp.hide(nil)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
